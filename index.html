@@ -70,6 +70,9 @@
   src="photo1.jpeg"
   class="hidden mt-6 rounded-lg shadow-lg w-[90%] max-w-[700px] transition-opacity duration-1000 opacity-0"
 />
+      <h2 id="finalMessage" class="hidden text-5xl mt-6 text-[#bd1e59] font-bold animate-pulse">
+  To be continued...
+</h2>
     </section>
   </main>
 
@@ -146,9 +149,19 @@ function startPhotoSlideshow() {
 
     currentPhoto++;
 
-    // Stop at last photo
     if (currentPhoto >= OUR_PHOTOS.length) {
+
       clearInterval(slideshow);
+
+      // wait 7 seconds on the last photo
+      setTimeout(() => {
+
+        ourPhoto.style.display = "none";
+
+        finalMessage.classList.remove("hidden");
+
+      }, 7000);
+
       return;
     }
 
@@ -159,7 +172,7 @@ function startPhotoSlideshow() {
       ourPhoto.style.opacity = 1;
     }, 500);
 
-  }, 5000); // 5 seconds per photo
+  }, 5000);
 
 }
 
@@ -235,6 +248,7 @@ setTimeout(() => {
   </script>
 </body>
 </html>
+
 
 
 
