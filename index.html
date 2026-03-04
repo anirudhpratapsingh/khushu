@@ -68,7 +68,7 @@
       <img
   id="ourPhoto"
   src="photo1.jpeg"
-  class="hidden mt-6 rounded-lg shadow-lg h-[700px] transition-opacity duration-1000 opacity-0"
+  class="hidden mt-6 rounded-lg shadow-lg w-[90%] max-w-[700px] transition-opacity duration-1000 opacity-0"
 />
     </section>
   </main>
@@ -81,7 +81,7 @@
       const imageDisplay = document.getElementById('imageDisplay');
       const valentineQuestion = document.getElementById('valentineQuestion');
       const responseButtons = document.getElementById('responseButtons');
-      const ourphoto = document.getElementById('photo1');
+      const ourphoto = document.getElementById('ourphoto');
 
       const music = new Audio("Bairan Banjaare (pagalall.com).mp3");
       music.loop = true;
@@ -102,10 +102,10 @@
       ];
 
       const OUR_PHOTOS = [
-  "photo1.jpg",
-  "photo2.jpg",
-  "photo3.jpg",
-  "photo4.jpg"
+  "photo1.jpeg",
+  "photo2.jpeg",
+  "photo3.jpeg",
+  "photo4.jpeg"
 ];
 
       const NO_BUTTON_MESSAGES = [
@@ -232,6 +232,7 @@ setTimeout(() => {
   </script>
 </body>
 </html>
+
 
 
 
