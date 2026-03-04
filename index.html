@@ -68,7 +68,7 @@
       <img
   id="ourPhoto"
   src="photo1.jpeg"
-  class="hidden mt-6 rounded-lg shadow-lg h-[500px]"
+  class="hidden mt-6 rounded-lg shadow-lg h-[800px]"
 />
     </section>
   </main>
@@ -174,8 +174,13 @@
         valentineQuestion.textContent = 'Good choice 😏';
         responseButtons.style.display = 'none';
 
-        setTimeout(() => {
+setTimeout(() => {
+
+  imageDisplay.style.display = "none";
+  valentineQuestion.style.display = "none";
+
   ourPhoto.classList.remove("hidden");
+
 }, 7000);
 
         // Heart-shaped confetti for a valentine theme
@@ -193,6 +198,7 @@
   </script>
 </body>
 </html>
+
 
 
 
