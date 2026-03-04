@@ -68,7 +68,7 @@
       <img
   id="ourPhoto"
   src="photo1.jpeg"
-  class="hidden mt-6 rounded-lg shadow-lg h-[700px]"
+  class="hidden mt-6 rounded-lg shadow-lg h-[700px] transition-opacity duration-1000 opacity-0"
 />
     </section>
   </main>
@@ -101,6 +101,13 @@
         './images/image7.gif',
       ];
 
+      const OUR_PHOTOS = [
+  "photo1.jpg",
+  "photo2.jpg",
+  "photo3.jpg",
+  "photo4.jpg"
+];
+
       const NO_BUTTON_MESSAGES = [
         'No',
         'Are you sure?',
@@ -120,11 +127,38 @@
         'Happy kitten celebrating',
       ];
 
+      
+
       // State
       let noClickCount = 0;
       let buttonHeight = 48;
       let buttonWidth = 80;
       let fontSize = 20;
+      let currentPhoto = 0;
+
+      function startPhotoSlideshow() {
+
+  ourPhoto.classList.remove("hidden");
+  ourPhoto.style.opacity = 1;
+
+  setInterval(() => {
+
+    currentPhoto++;
+
+    if (currentPhoto >= OUR_PHOTOS.length) {
+      currentPhoto = 0;
+    }
+
+    ourPhoto.style.opacity = 0;
+
+    setTimeout(() => {
+      ourPhoto.src = OUR_PHOTOS[currentPhoto];
+      ourPhoto.style.opacity = 1;
+    }, 500);
+
+  }, 3000);
+
+}
 
     noButton.addEventListener('click', () => {
       if (noClickCount >= MAX_NO_CLICKS) {
@@ -179,7 +213,7 @@ setTimeout(() => {
   imageDisplay.style.display = "none";
   valentineQuestion.style.display = "none";
 
-  ourPhoto.classList.remove("hidden");
+  startPhotoSlideshow();
 
 }, 6500);
 
@@ -198,6 +232,7 @@ setTimeout(() => {
   </script>
 </body>
 </html>
+
 
 
 
