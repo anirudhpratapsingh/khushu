@@ -77,6 +77,9 @@
       const valentineQuestion = document.getElementById('valentineQuestion');
       const responseButtons = document.getElementById('responseButtons');
 
+      const music = new Audio("Bairan Banjaare (pagalall.com).mp3");
+      music.loop = true;
+
       // Configuration
       const GROWTH_PER_CLICK = 35;
       const FONT_GROWTH_PER_CLICK = 25;
@@ -127,16 +130,6 @@
        noButton.style.top = y + "px";
        return;
      }
-    noButton.addEventListener("mouseover", () => {
-     if (noClickCount >= MAX_NO_CLICKS) {
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 50);
-
-      noButton.style.position = "absolute";
-      noButton.style.left = x + "px";
-      noButton.style.top = y + "px";
-    }
-  });
 
         noClickCount++;
 
@@ -157,7 +150,19 @@
         noButton.textContent = NO_BUTTON_MESSAGES[noClickCount];
       });
 
+    noButton.addEventListener("mouseover", () => {
+     if (noClickCount >= MAX_NO_CLICKS) {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+
+      noButton.style.position = "absolute";
+      noButton.style.left = x + "px";
+      noButton.style.top = y + "px";
+    }
+  });
+
       yesButton.addEventListener('click', () => {
+        music.play();
         imageDisplay.src = IMAGE_PATHS[IMAGE_PATHS.length - 1];
         imageDisplay.alt = ALT_TEXTS[ALT_TEXTS.length - 1];
         valentineQuestion.textContent = 'Good choice 😏';
@@ -178,4 +183,5 @@
   </script>
 </body>
 </html>
+
 
